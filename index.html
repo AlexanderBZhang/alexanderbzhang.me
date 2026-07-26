@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Zhang</title>
+<meta name="description" content="A continuously running multi-agent system that surveys AI-security research, forums, and opportunity boards, and reports what is new.">
+<style>
+  :root { --fg:#16181d; --muted:#5b6270; --bg:#fff; --line:#e6e8ec; --accent:#2b5bd7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8eaee; --muted:#9aa3b2; --bg:#101216; --line:#252a33; --accent:#7fa2ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:44rem; margin:0 auto; padding:4rem 1.25rem 6rem; }
+  h1 { font-size:1.9rem; line-height:1.2; margin:0 0 .4rem; letter-spacing:-.02em; }
+  .tag { color:var(--muted); font-size:1.05rem; margin:0 0 2.5rem; }
+  h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em;
+       color:var(--muted); margin:2.75rem 0 .75rem; font-weight:600; }
+  p { margin:0 0 1rem; }
+  ul { margin:0 0 1rem; padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+  code { background:rgba(127,127,127,.13); padding:.1em .35em; border-radius:3px; font-size:.9em; }
+  hr { border:0; border-top:1px solid var(--line); margin:3rem 0 1.5rem; }
+  footer { color:var(--muted); font-size:.9rem; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Alexander Zhang</h1>
+  <p class="tag">I build an autonomous research fleet that reads the AI-security literature so a person doesn&rsquo;t have to.</p>
+
+  <h2>What it is</h2>
+  <p>
+    A continuously running multi-agent system. Several unattended jobs sweep research
+    forums, preprint servers, issue trackers, and opportunity boards on a fixed schedule, judge what
+    they find against a maintained corpus, and surface only what is genuinely new.
+  </p>
+  <p>
+    It has been running since July 2026. It maintains a corpus of roughly 900 catalogued findings and
+    an archive of generated research directions, each one checked against the published literature
+    before it is reported. Most are rejected — that is the point.
+  </p>
+
+  <h2>How it works</h2>
+  <ul>
+    <li><strong>Sweep.</strong> Scheduled jobs read a registry of vetted sources across several
+        independent fetch channels, honouring each site's <code>robots.txt</code> and terms.</li>
+    <li><strong>Ground.</strong> Findings are recorded with a verbatim quote, a date, and a source
+        URL, so an entry survives its source going offline.</li>
+    <li><strong>Generate.</strong> A separate job proposes research directions from the corpus
+        through a set of fixed analytical lenses.</li>
+    <li><strong>Kill.</strong> Every proposal is searched against the published literature. Anything
+        already solved is archived with the citation that killed it.</li>
+    <li><strong>Report.</strong> What survives is written up with what is measured and what is still
+        unverified.</li>
+  </ul>
+
+  <h2>Principles</h2>
+  <ul>
+    <li>Terms and protocols are followed, never worked around. No user-agent spoofing, no CAPTCHA
+        solving, no proxy laundering. A <code>robots.txt</code> disallow is final.</li>
+    <li>Nothing time-varying is asserted from memory. Prices, deadlines, and access rules are
+        re-checked at the source and cited with a date.</li>
+    <li>Every claim carries its evidence, and unverified claims are labelled as such rather than
+        rounded to something plausible.</li>
+    <li>Depth over volume. A single well-grounded finding beats a page of summaries.</li>
+  </ul>
+
+  <h2>Status</h2>
+  <p>
+    Independent research project, self-funded, run by one person. Not a company, no product for sale,
+    no customers, no revenue. Built to answer research questions and to find opportunities worth a person's time.
+  </p>
+
+  <hr>
+  <footer>
+    Contact: <a href="mailto:hello@alexanderbzhang.me">hello@alexanderbzhang.me</a>
+  </footer>
+
+</div>
+</body>
+</html>
